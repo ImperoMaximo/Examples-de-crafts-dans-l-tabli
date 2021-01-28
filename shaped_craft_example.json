@@ -1,0 +1,33 @@
+//ce fichier doit se trouver dans votre fichier ressources.data.modid.recipes.name_of_the_file
+//peu importe le nom du fichier tant que c'est un .json
+//le fichier doit de préférence porter un nom descriptif du craft qu'il effectue
+//par exemple, un craft de lingot custom pourrait s'appeler "example_ingot_by_exmmple_block" si vous souhaitez le rendre obtensible depuis un block
+//ou un lingot depuis un minerai dans ce cas ce serais "example_ingot_by_example_ore" pensez à préciser sinon vous serez perdus
+
+{
+	"type": "minecraft:crafting_shaped",
+  
+  //il existe 2 types de crafts, les shaped et les shapeless.
+  //les crafts shaped sont des crafts avec un pattern bien défini (comme un outil)
+  //les crafts shapeless sont donc ceux avec un pattern indéfini, c'est à dire que les items peuvent être posés n'importe où dans la table de craft (comme les lingots dans la grille de craft)
+
+	"pattern": [
+		"XXX",       //n'importe quelle lettre fonctionne, il peut y avoir maximum 3 lettres sur une ligne de craft dans l'établis
+		" G ",       //un espace signifie que cet emplacement reste vide, il peut y avoir autant de lettre que d'emplacements libres, soit 9 lettres (3 par ligne)
+		"XXX"        //pas de virgule en fin de ligne pour une fin d'objet
+	],          //mais à la fin de la catégorie
+	"key": {       //explication de chaque lettre afin d'établir une correspondance
+		"X": {       
+			"item": "modid:example_ingot"    //maintenant le symbole correspond à un de vos items
+		},           //attention à la virgule
+		"G": {
+			"tag": "forge:rods/wooden"       //l'appelation des items vanilla est assez spécifique, pour ces items mieux vaut se réferer aux crafts préexistants dans les fichiers de votre mdk
+		}                                  //ils sont disponibles dans votre mdk, dans les fichiers de forge data.minecraft.recipes.file.json vous trouverez votre bonheur
+	},          //attention virgule en fin de catégorie et pas d'objet
+	"result": {
+		"item": "modid:example_block",     //résultat de votre craft
+    "count": 4                         //nombre d'items obtenus avec le craft
+	}
+}              //attention pas de virgule en fin de fichier json
+
+//si vous avez une erreur, vérifiez bien les conventions .json si vous ne vous êtes pas trompés dans les virgules
